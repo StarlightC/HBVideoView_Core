@@ -52,28 +52,26 @@ dependencies {
     kapt("com.google.auto.service:auto-service:1.0")
 }
 
-val sourcesJar by tasks.registering(Jar::class) {
-    from(android.sourceSets.map { set -> set.java.getSourceFiles() })
-    archiveClassifier.set("sources")
-}
-
-publishing {
-    repositories {
-        maven {
-            name = "HBVideoView-Core"
-            url = uri("https://maven.pkg.github.com/StarlightC/HBVideoView_Core")
-            credentials {
-                username = gradleLocalProperties(rootDir).getProperty("GITHUB_USER").toString()
-                password = gradleLocalProperties(rootDir).getProperty("GITHUB_TOKEN").toString()
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "HBVideoView-Core"
+                url = uri("https://maven.pkg.github.com/StarlightC/HBVideoView_Core")
+                credentials {
+                    username = gradleLocalProperties(rootDir).getProperty("GITHUB_USER").toString()
+                    password = gradleLocalProperties(rootDir).getProperty("GITHUB_TOKEN").toString()
+                }
             }
         }
-    }
-    publications {
-        create<MavenPublication>("mavenJava") {
-            groupId = "com.starlightc.video"
-            artifactId = "core"
-            artifact(sourcesJar)
-            version = "0.0.1"
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.starlightc.video"
+                artifactId = "hbvideoview_core"
+                version = "0.0.3"
+
+                artifact("$buildDir/outputs/aar/core-release.aar")
+            }
         }
     }
 }

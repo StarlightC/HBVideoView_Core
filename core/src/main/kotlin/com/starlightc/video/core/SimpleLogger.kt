@@ -1,7 +1,6 @@
 package com.starlightc.video.core
 
 import android.util.Log
-import com.starlightc.core.BuildConfig
 
 /**
  * @author StarlightC
@@ -18,10 +17,7 @@ class SimpleLogger private constructor(){
     }
     private var tagAvailabilityMap: HashMap<String, Boolean> = HashMap()
     private var isSilence = false
-    private val isDebug: Boolean
-    get() {
-        return BuildConfig.DEBUG
-    }
+    private var isDebug: Boolean = false
 
     init {
         tagAvailabilityMap[Constant.TAG] = true
