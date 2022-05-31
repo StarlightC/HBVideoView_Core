@@ -68,7 +68,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.starlightc.video"
                 artifactId = "hbvideoview_core"
-                version = "0.0.3"
+                version = "0.0.5"
 
                 artifact("$buildDir/outputs/aar/core-release.aar")
             }

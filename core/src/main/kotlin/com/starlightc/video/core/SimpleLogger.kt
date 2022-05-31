@@ -17,7 +17,7 @@ class SimpleLogger private constructor(){
     }
     private var tagAvailabilityMap: HashMap<String, Boolean> = HashMap()
     private var isSilence = false
-    private var isDebug: Boolean = false
+    var isDebug: Boolean = false
 
     init {
         tagAvailabilityMap[Constant.TAG] = true
