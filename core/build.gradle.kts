@@ -65,7 +65,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.starlightc.video"
                 artifactId = "hbvideoview_core"
-                version = "0.0.9"
+                version = "0.1.0"
             }
         }
     }
