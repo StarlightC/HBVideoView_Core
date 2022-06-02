@@ -56,7 +56,6 @@ afterEvaluate {
     publishing {
         repositories {
             maven {
-                name = "HBVideoView-Core"
                 url = uri("https://maven.pkg.github.com/StarlightC/HBVideoView_Core")
                 credentials {
                     username = gradleLocalProperties(rootDir).getProperty("GITHUB_USER").toString()
@@ -66,11 +65,10 @@ afterEvaluate {
         }
         publications {
             create<MavenPublication>("release") {
+                from(components["release"])
                 groupId = "com.starlightc.video"
                 artifactId = "hbvideoview_core"
-                version = "0.0.5"
-
-                artifact("$buildDir/outputs/aar/core-release.aar")
+                version = "0.0.7"
             }
         }
     }

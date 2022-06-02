@@ -118,6 +118,10 @@ interface IMediaPlayer<T> : LifecycleOwner {
 
     fun create(context: Context)
 
+    fun getInfoProcessor(): InfoProcessor
+
+    fun getErrorProcessor(): ErrorProcessor
+
     /**
      * 获取Player名称
      */
