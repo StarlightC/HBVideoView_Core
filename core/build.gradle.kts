@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -51,19 +49,10 @@ dependencies {
 
 afterEvaluate {
     publishing {
-        repositories {
-            maven {
-                url = uri("https://maven.pkg.github.com/StarlightC/HBVideoView_Core")
-                credentials {
-                    username = gradleLocalProperties(rootDir).getProperty("GITHUB_USER").toString()
-                    password = gradleLocalProperties(rootDir).getProperty("GITHUB_TOKEN").toString()
-                }
-            }
-        }
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.starlightc.video"
+                groupId = "com.github.starlightc"
                 artifactId = "hbvideoview_core"
                 version = "0.1.0"
             }
