@@ -54,7 +54,6 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.starlightc"
                 artifactId = "hbvideoview_core"
-                version = "0.1.6"
             }
         }
     }
