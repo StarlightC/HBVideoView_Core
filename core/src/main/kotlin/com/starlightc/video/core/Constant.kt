@@ -15,13 +15,6 @@ object Constant {
     const val IJKPLAYER = "ijkplayer"
     const val EXOPLAYER = "exoplayer"
 
-    const val IJK_INFO_PROCESSOR = "ijkinfoprocessor"
-    const val ANDROID_INFO_PROCESSOR = "androidinfoprocessor"
-    const val EXO_INFO_PROCESSOR = "exoinfoprocessor"
-    const val IJK_ERROR_PROCESSOR = "ijkerrorprocessor"
-    const val ANDROID_ERROR_PROCESSOR = "androiderrorprocessor"
-    const val EXO_ERROR_PROCESSOR = "exoerrorprocessor"
-
     const val CONTROLLER_HIDE_TIME = 2000L
 
     const val EXOPLAYER_INFO_CODE_LOADING_START = 0
